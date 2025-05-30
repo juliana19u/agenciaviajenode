@@ -1,9 +1,15 @@
 import Sequelize from 'sequelize';
 
-const db = new Sequelize('agenciaviajes', 'root', '', {
-    host: '127.0.0.1',
+const db = new Sequelize('agenciaviajes', 'Valentina', '1022948619VC*', {
+    host: 'database-ceetttttt.mysql.database.azure.com',
     port: '3306',
     dialect: 'mysql',
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false // This is important for self-signed certificates
+        }
+    },
     define: {
         timestamps: false
     },
